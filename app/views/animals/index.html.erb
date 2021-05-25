@@ -3,5 +3,6 @@
 
   <% @animals.each do |animal| %>
     <li><%= "#{animal.name} | #{animal.species}" %></li>
+    <%= link_to "learn more", animal_path(animal) %>
   <% end %>
 </ul>
