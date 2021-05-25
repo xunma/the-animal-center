@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get 'animals/:id/edit', to: 'animals#edit'
   patch 'animals/:id', to: 'animals#update'
   # 5. users can delete an animal
+  delete 'animals/:id', to: 'animals#destroy'
 end

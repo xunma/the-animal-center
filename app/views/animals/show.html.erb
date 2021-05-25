@@ -10,3 +10,4 @@
   <% end %>
 </ul>
 
+<%= link_to "delete #{@animal.name}☹️", animal_path(@animal), method: :delete, data: { confirm: "Are you sure?"} %>
