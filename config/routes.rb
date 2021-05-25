@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # 1. users can see all the animals
   get 'animals', to: 'animals#index'
   # 2. users can see one animal
+  get 'animals/:id', to: 'animals#show'
   # 3. users can create a new animal
   # 4. users can update an animal
   # 5. users can delete an animal

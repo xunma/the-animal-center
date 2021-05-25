@@ -1,0 +1,12 @@
+<h1><%= @animal.name %></h1>
+<ul>
+  <li><%= @animal.species%></li>
+  <% if @animal.sex == "female" %>
+    <li>👧</li>
+  <% elsif @animal.sex == "male" %>
+    <li>👱‍♂️</li>
+  <% else %>
+    <li>🧛‍♂️</li>
+  <% end %>
+</ul>
+
