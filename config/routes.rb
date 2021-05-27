@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :animals
-
+  patch 'animals/:id/mark_as_adopted', to: 'animals#mark_as_adopted', as: :mark_as_adopted
   # # 1. users can see all the animals
   # get 'animals', to: 'animals#index'
   # # 3. users can create a new animal

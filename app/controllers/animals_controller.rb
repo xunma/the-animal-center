@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-  before_action :set_animal, only: [:show, :edit, :update, :destroy]
+  before_action :set_animal, only: [:show, :edit, :update, :destroy, :mark_as_adopted]
 
   def index
     @animals = Animal.all
@@ -28,6 +28,15 @@ class AnimalsController < ApplicationController
 
   def destroy
     @animal.destroy
+    redirect_to animals_path
+  end
+
+  def mark_as_adopted
+    # change the adopted attribute from false to true
+    # find the animal
+    # set the adopted to true
+    @animal.adopted = true
+    @animal.save
     redirect_to animals_path
   end
 

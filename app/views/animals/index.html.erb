@@ -2,7 +2,15 @@
 <ul>
 
   <% @animals.each do |animal| %>
-    <li><%= "#{animal.name} | #{animal.species}" %></li>
+    <li><%= "#{animal.name} | #{animal.species}" %>
+      <%= link_to mark_as_adopted_path(animal), method: :patch do %>
+        <% if animal.adopted %>
+          ✅
+        <% else %>
+          ⬜️
+        <% end %>
+      <% end %>
+    </li>
     <%= link_to "learn more", animal_path(animal) %>
   <% end %>
 </ul>
