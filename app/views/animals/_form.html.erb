@@ -1,9 +1,6 @@
-<%= form_for(animal) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :sex %>
-  <%= f.text_field :sex %>
-  <%= f.label :species %>
-  <%= f.text_field :species %>
+<%= simple_form_for(animal) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :sex %>
+  <%= f.input :species %>
   <%= f.submit %>
 <% end %>
