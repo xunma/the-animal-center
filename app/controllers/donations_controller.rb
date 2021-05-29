@@ -1,5 +1,5 @@
 class DonationsController < ApplicationController
-  before_action :find_animal
+  before_action :find_animal, only: [:index, :new, :create]
 
   def index
     @donations = @animal.donations
@@ -16,6 +16,13 @@ class DonationsController < ApplicationController
     donation.animal = @animal
     donation.save
     redirect_to animal_path(@animal)
+  end
+
+  def destroy
+    @donation = Donation.find(params[:id])
+    animal = @donation.animal
+    @donation.destroy
+    redirect_to animal_donations_path(animal)
   end
 
   private
