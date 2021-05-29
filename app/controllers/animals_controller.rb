@@ -14,8 +14,11 @@ class AnimalsController < ApplicationController
 
   def create
     @animal = Animal.new(animal_params)
-    @animal.save
-    redirect_to animals_path
+    if @animal.save
+      redirect_to animals_path
+    else
+      render :new
+    end
   end
 
   def edit

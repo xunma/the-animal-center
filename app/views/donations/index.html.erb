@@ -1,0 +1,8 @@
+<h1><%= @animal.name %> received...</h1>
+
+<ul>
+  <% @donations.each do |donation| %>
+    <li><%=donation.description%></li>
+  <% end %>
+
+</ul>
