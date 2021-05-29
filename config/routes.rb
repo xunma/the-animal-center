@@ -4,9 +4,5 @@ Rails.application.routes.draw do
   resources :animals do
     resources :donations, only: [:new, :create, :index]
   end
-  resources :donations, only: [:destroy]
-
-  # display an animal's donations
-  # remove a donation
-  # edit a donation
+  resources :donations, only: [:destroy, :edit, :update]
 end
