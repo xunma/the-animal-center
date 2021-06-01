@@ -1,16 +1,23 @@
-<h1>The Cute Animals waiting to be adopted</h1>
-<ul>
-
-  <% @animals.each do |animal| %>
-    <li><%= "#{animal.name} | #{animal.species}" %>
-      <%= link_to mark_as_adopted_path(animal), method: :patch do %>
-        <% if animal.adopted %>
-          ✅
-        <% else %>
-          ⬜️
-        <% end %>
-      <% end %>
-    </li>
-    <%= link_to "learn more", animal_path(animal) %>
-  <% end %>
-</ul>
+<div class="banner d-flex justify-content-center align-items-center">
+  <div class="inner">
+    <h1>The Cute Animals waiting to be adopted</h1>
+    <%= link_to "See them!", "#animals", class: "btn btn-primary" %>
+  </div>
+</div>
+<div class="container">
+  <div class="row" id="animals">
+    <% @animals.each do |animal| %>
+      <div class="col-4 my-3">
+        <div class="card" style="width: 18rem;">
+          <%= image_tag "doggie", alt: "Animal pic" %>
+          <div class="card-body">
+            <h5 class="card-title"> <%= animal.name %> </h5>
+            <p class="card-text"> <%= animal.species %> </p>
+            <%= link_to "Learn more", animal_path(animal),class: "btn btn-primary" %>
+            <%= link_to "#{animal.adopted? ? 'Adopted' : 'Adopt'}", mark_as_adopted_animal_path(animal),class: "btn btn-#{animal.adopted? ? 'secondary' : 'success'}" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
