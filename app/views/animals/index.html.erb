@@ -14,7 +14,7 @@
             <h5 class="card-title"> <%= animal.name %> </h5>
             <p class="card-text"> <%= animal.species %> </p>
             <%= link_to "Learn more", animal_path(animal),class: "btn btn-primary" %>
-            <%= link_to "#{animal.adopted? ? 'Adopted' : 'Adopt'}", mark_as_adopted_animal_path(animal),class: "btn btn-#{animal.adopted? ? 'secondary' : 'success'}" %>
+            <%= link_to "#{animal.adopted? ? 'Adopted' : 'Adopt'}", mark_as_adopted_animal_path(animal), method: :patch, class: "btn btn-#{animal.adopted? ? 'secondary' : 'success'}" %>
           </div>
         </div>
       </div>
